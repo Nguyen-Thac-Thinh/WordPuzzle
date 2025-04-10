@@ -1,0 +1,55 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Animal Word Puzzle";
+}
+
+<div class="game-container">
+    <!-- Màn hình chào mừng -->
+    <div id="welcome-screen">
+        <div class="welcome-content">
+            <h1>Welcome to Animal Word Puzzle!</h1>
+            <button id="start-game-btn" class="btn btn-primary">Start Game</button>
+        </div>
+       
+    </div>
+
+    <!-- Giao diện trò chơi -->
+    <div id="game-screen" style="display: none;">
+        <div class="game-frame">
+            <h2>Animal Word Puzzle</h2>
+            <div id="score">Score: <span id="score-value">0</span></div>
+            <div id="words-found">Words Found: <span id="words-found-value">0</span> / <span id="total-words">0</span></div>
+
+            <!-- Ô chữ -->
+            <div id="puzzle-grid" class="puzzle-grid"></div>
+
+            <!-- Nút đoán và gợi ý -->
+            <div class="game-controls">
+                <button id="hint-btn" class="btn btn-info">Hint</button>
+                <button id="guess-btn" class="btn btn-success">Make a Guess</button>
+            </div>
+
+            <!-- Thông báo -->
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+
+    <!-- Màn hình chúc mừng -->
+    <div id="congrats-screen" style="display: none;">
+        <div class="congrats-content">
+            <h1>Congratulations!</h1>
+            <p>You've completed the puzzle!</p>
+            <button id="play-again-btn" class="btn btn-primary">Bạn muốn chơi tiếp?</button>
+        </div>
+       
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Truyền dữ liệu câu đố từ backend sang JavaScript
+        const puzzles = @Html.Raw(Json.Serialize(Model.PuzzleDtos));
+    </script>
+    <script src="~/js/game.js"></script>
+}

@@ -1,0 +1,199 @@
+﻿body {
+    background: url('https://khoinguonsangtao.vn/wp-content/uploads/2022/09/anh-nen-powerpoint-cute.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.game-frame {
+    background: url('https://png.pngtree.com/background/20210717/original/pngtree-cartoon-cute-animal-decorative-border-picture-image_1444780.jpg') no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+    .game-frame::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.8);
+        z-index: 1;
+    }
+
+    .game-frame > * {
+        position: relative;
+        z-index: 2;
+    }
+
+.puzzle-grid {
+    display: grid;
+    gap: 5px;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+.grid-cell {
+    width: 70px;
+    height: 70px;
+    background: white;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+    .grid-cell.selected {
+        background: #aaffaa;
+    }
+
+    .grid-cell.found-0 {
+        background: #ffcccb;
+    }
+
+    .grid-cell.found-1 {
+        background: #add8e6;
+    }
+
+    .grid-cell.found-2 {
+        background: #90ee90;
+    }
+
+    .grid-cell.found-3 {
+        background: #f0e68c;
+    }
+
+.btn {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+}
+
+.btn-info {
+    background: #17a2b8;
+    color: white;
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.message {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+#score, #words-found {
+    font-size: 20px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #333;
+}
+
+    /* Thêm biểu tượng cho phần điểm số và số từ tìm thấy */
+    #score::before, #words-found::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        background-color: #007bff;
+        border-radius: 50%;
+        text-align: center;
+        color: white;
+        line-height: 20px;
+        font-size: 14px;
+    }
+
+    #score::before {
+        content: "S"; /* Biểu tượng điểm */
+    }
+
+    #words-found::before {
+        content: "W"; /* Biểu tượng số từ */
+    }
+
+.welcome-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+    .welcome-content h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+#congrats-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: url('/') no-repeat center center fixed; /* Đặt ảnh hoặc GIF cho màn hình chúc mừng */
+    background-size: cover; /* Phóng to ảnh để bao phủ toàn bộ màn hình */
+    background-position: center; /* Căn giữa ảnh */
+}
+
+.congrats-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+    .congrats-content h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .congrats-content p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+.footer{
+    display:none    
+}
